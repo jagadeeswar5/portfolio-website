@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Portfolio = () => {
   const [theme, setTheme] = useState("light");
@@ -21,10 +21,6 @@ const Portfolio = () => {
       document.documentElement.setAttribute("data-theme", theme);
     }
   }, [theme, mounted]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
 
   // Experience Data
   const experiences = [
@@ -58,7 +54,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className={`min-h-screen flex flex-col items-center px-6 transition-all duration-500 overflow-visible ${
+    <div className={`min-h-screen flex flex-col items-center px-6 transition-all duration-500 overflow-x-hidden ${
         theme === "dark"
           ? "bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white"
           : "bg-white text-gray-900"
